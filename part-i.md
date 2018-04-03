@@ -16,18 +16,18 @@ Programa ejemplo: https://gobyexample.com/hello-world
 (Mostrar ejemplo)
 
 ### Ejercicio
-We're going to be building a program that outputs proverbs, specifically, the Go Proverbs (https://go-proverbs.github.io).
-Let's start off real easy. Write a go program that prints out all the Go Proverbs on the terminal screen and meets the following requirements:
+Vamos a construir que de como salida proverbios, específicamente los provervios de Go (https://go-proverbs.github.io).
+Vamos a comenzar bien fácil. Escribe un programa en Go que imprima todos los proverbios en la pantalla de la terminal y que cumpla los siguientes requerimientos: 
 
-* Ensure your program can be built using `go build`
-* Ensure your program is installable with `go install`
-* Ensure you can locate your built program in the `$GOPATH`
-* Ensure you can run your program from anywhere on your system
+* Asegúrate que el programa se pueda construir con `go build`
+* Asegúrate que tu programa es instalable con `go install`
+* Asegúrate de que puedas localizar el binario en `$GOPATH`
+* Asegúrate que tu programa corra desde donde sea en tu sistema.
 
-## Command Line Arguments
-CLI arguments help you parameterize your programs. Head over to https://gobyexample.com/command-line-arguments.
+## Argumentos de Línea de Comandos
+Argurmentos de CLI ayudan a que se pueda parametrizar tu programa. Ve y lee lo que hay en https://gobyexample.com/command-line-arguments.
 
-### Exercise
+### Ejercicio
 It's time to extend your program by allowing it to take a numeric argument indicating which proverb to display (e.g. `proverbs 5`). It should meet the following requirements:
 
 * Takes a numeric argument and display a single proverb matching the position of that proverb in the list. Note that your list can (should be) 0-based.
