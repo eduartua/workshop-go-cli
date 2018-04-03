@@ -1,7 +1,7 @@
 # Iniciando el Workshop: Command Line Apps Parte I
 
 ## Antes de comenzar: 
-* Configura tu `$GOPATH` y asegura de que tu sistema sabe de el (`echo $GOPATH` no debería retornar vacío
+* Configura tu `$GOPATH` y asegura de que tu sistema sabe de él (`echo $GOPATH` no debería retornar vacío)
 * Asegúrate de que tu `$GOPATH` está en tu `$PATH` de modo que pueda ser encontrado fuera de tu directorio del proyecto.
 
 ## Paquete main y la función main
