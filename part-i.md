@@ -1,21 +1,21 @@
-# Beginning Workshop: Command Line Apps Part I
+# Iniciando el Workshop: Command Line Apps Parte I
 
-## Before we begin
-* Set your `$GOPATH` and ensure your system is aware of it (`echo $GOPATH` should not return blank)
-*  Ensure your `$GOPATH` is in your `$PATH` so it can be found outside of your project folder
+## Antes de comenzar: 
+* Configura tu `$GOPATH` y asegura de que tu sistema sabe de el (`echo $GOPATH` no debería retornar vacío
+* Asegúrate de que tu `$GOPATH` está en tu `$PATH` de modo que pueda ser encontrado fuera de tu directorio del proyecto.
 
-## Package main and the main func
-* Go applications produce a single executable.
+## Paquete main y la función main
+* Aplicaciones en Go producen un solo ejecutable.
 * The `package main` is the only required package for any Go program.
-* A `main` function is required as the entry point into the Go program.
-* You cannot `import` anything from the `main` package, meaning any code you put into `package main` is not available for import to other go programs.
+* Una función `main` es requerida como punto de entrada en cualquier programa de Go.
+* No puedes `import` nada desde el paquete `main`, lo que quiere decir que el código que coloques dentro del `package main` no está disponible para ser descargado por otros programas de Go.
 
-Example program: https://gobyexample.com/hello-world
+Programa ejemplo: https://gobyexample.com/hello-world
 
-**ProTip**: Separate the logic of what your package provides as functionality from the interface that allows one to use it--in this case, the CLI.
-(Show example)
+**ProTip**: Separa la lógica de lo que tu paquete provee como funcionalidad  de la interfaz que te permite usarla -- en este caso, la CLI.
+(Mostrar ejemplo)
 
-### Exercise
+### Ejercicio
 We're going to be building a program that outputs proverbs, specifically, the Go Proverbs (https://go-proverbs.github.io).
 Let's start off real easy. Write a go program that prints out all the Go Proverbs on the terminal screen and meets the following requirements:
 
