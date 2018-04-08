@@ -28,58 +28,60 @@ Vamos a comenzar bien fácil. Escribe un programa en Go que imprima todos los pr
 Argurmentos de CLI ayudan a que se pueda parametrizar tu programa. Ve y lee lo que hay en https://gobyexample.com/command-line-arguments.
 
 ### Ejercicio
-It's time to extend your program by allowing it to take a numeric argument indicating which proverb to display (e.g. `proverbs 5`). It should meet the following requirements:
+Es momento de mejorar el programa, permitiéndole un argument numérico indicando cuál proverbio mostrar. (ejemplo `proverbio 5`). Debe cumplir los siguientes requerimientos:
 
-* Takes a numeric argument and display a single proverb matching the position of that proverb in the list. Note that your list can (should be) 0-based.
-* Non-numeric arguments should be rejected
-* Non-positive arguments can be converted to their absolute counterparts
-* Arguments that go beyond the bounds of the list of proverbs should be rejects (e.g. asking for the 45th proverb when there are only 19 should rebuke the user).
+* Tomar un argumento numérico y mostrar un solo proverbio, el cuál debe coincidir con la posición del proverbio en la lista.
+* Arguemntos no numéricos deben ser rechazados.
+* Argumentos no positivos deben ser convertidos a su valor absoluto.
+* Argumentos que excedan los límites de la lista deben ser rechazados. (ejemplo: pedir el proverbio 45º cuando hay solamente 19 debería mostrar queja al usuario).
 
-ProTip: There's the hard way to do this (manipulating a string blob to extract text at the right position) and there's the easy way involving slices (https://gobyexample.com/slices). 
+ProTip: Hay una manera difícil de hacer esto (manipulando un string blob para extraer el texto en la posición correcta) y hay una manera fácil el cuál usa slices (https://gobyexample.com/slices). 
 
 ## Command Line Flags
-Flags are commonly used for CLI-based applications when there's a need to specify options (e.g. `ls -l` where the `-l` flag tells the program to alter the output you would have gotten otherwise). See https://gobyexample.com/command-line-flags for how to extract flags in your program.
+Flags son comúnmente usadas para aplicaciones basadas en Interfaz de Línea de Comandos cuando hay la necesidad de especificar opciones (ejemplo: `ls -l` donde el flag `-l` le dice al programa alterar la salida que se hubiese obtenido de otra manera. Ver http://gobyexample.com/command-line-flags para aprender como extraer flags en tu programa.
 
-### Exercise
-Continuing to build on our `proverbs` program, let's refactor our program to take `-f` flag and a value indicating a string to search our list of proverbs. If found, the proverb(s) are listed.
+### Ejercicio
+Continuemos construyendo nuestro programa de `proverbios`, vamos a modificarlo para que tome el flag `-f` y un valor indicando un string para buscar en nuestra lista de proverbios. Si lo encuentra, el proverbio(s) son listados.
 
-For example, `proverbs -f cgo` should find the two `cgo` references and return:
+Por ejemplo, `proverbs -f cgo` debería encontrar las dos referencias a `cgo` y retornar:
 
 ```
 Cgo must always be guarded with build tags.
 Cgo is not Go.
 ```
 
-Requirements:
-* Search should be case-insensitive
-* Nothing is returned when there's no match
+Requerimientos:
+* La búsqueda deber ser insensible a mayúsculas.
+* No se retorna nada cuando no hay match
 
-## Environment Variables
-When you need your application to behave differently depending on its environment, you use environment variables. See https://gobyexample.com/environment-variables. `os.Getenv` is used to retrieve values from the environment while `os.Setenv` is very useful for setting/overriding those variables (especially during testing).
+## Variables de Entorno
+Cuando necesitas que tu aplicación se comporte de manera diferente dependiendo de su entorno, usas variables de entorno. Ver https://gobyexample.com/environment-variables. `os.Getenv` es usado para obtener valores del entorno mientras que `os.Setenv` es muy útil para configurar/eliminar esas variables (especialmente durante testing).
 
-### Exercise
-Add a new command to your program that, when triggered, lists all environment variables found.
+### Ejercicio
+Agrega un nuevo comando a tu programa que, cuando se active, liste todas las variables de entorno encontradas.
 
-## Reading Files
-It's quite common to want to read files from disk during the execution of your programs. Using https://gobyexample.com/reading-files as your reference, we're going to make our `proverbs` program a bit more flexible by allowing it to load its list of proverbs from the file system rather than baking them into the program.
+## Leyendo Archivos
+Es muy común querer leer archivos desde el disco durante la ejecución de tu programas. Usando https://gobyexample.com/reading-files como referencia, vamos hacer nuestro programa de `proverbios` un poco más flexible permitiéndole que cargue su lista de proverbios desde el sistema de archivos 
+rather than baking them into the program.
 
-### Exercise
-Extend your program by allowing it to take a check the environment for a `PROVERBS_FILE` environment variable. If found, `PROVERBS_FILE` will contain the path to file containing a list of proverbs to be read into memory. 
+### Ejercicio
+Mejora tu programa permitiéndolo checar el entorno para saber si existe la variable de entorno `PROVERBS_FILE`. Si es encontrada, `PROVERBS_FILE` tendrá el path al archivo que contine la lista de proverbios a ser leídos en memoria.
 
-Your program should then be able to perform the same functions as it did before (e.g. listing, searching, showing a specific proverb).
+Entonces tu programa debería ser capaz de ejecutar las mismas funciones como lo hizo previamente (ejemplo: escuchar, buscar y mostrar un proverbio específico).
 
-You can either `export` your environment variable in the shell in which you build and execute your program or you can specify the variable at invocation time like so:
+Puedes también o `exportar` tu variable de entorno al shell cuál construirás y ejecetarás tu programa o puedes especificar la variable en el momento de invocación como:
 
 ```bash
 $ PROVERBS_FILE=/some/path/to/proverbs.txt proverbs -f cgo
 ```
 
-## Writing files
-It is just as common a practice to write files to disk from your programs as it is to read them. Next up, we are to extend our program to write the proverbs that are listed, shown or found to a file. You may use https://gobyexample.com/writing-files as a reference for how to write files to disk.
+## Escribiendo Archivos
+Es una práctica común escribir archivos comunes al disco tanto como leerlos. En el siguiente paso, vamos a mejorar nuestro programa para que escriba los programas que son listados, mostrados o encontrados a un archivo. Puedes usar https://gobyexample.com/writing-files como referencia sobre cómo escribir archivos al disco.
 
-### Exercise
-Extend your `proverbs` program so it can take a `-o` flag whose arguments is the path to which the results of your operation should be written. 
+### Ejercicio
+Merjora tu programa de `proverbios` de manera que pueda tomas un flag `-o` cuyo argumento es el path al cuál debería ser escrito el resultado de la operación.
 
-For example: `proverbs list -o my-proverbs.txt` should output the contents that would have been written to `STDOUT` into `my-proverbs.txt` instead.
+Por ejemplo: `proverbs list -o my-proverbs.txt` debería dar como salida el contenido que habría sido escrito a `STDOUT`, pero es realmente escrito a `my-proverbs.txt`.
 
-Note that the same behavior is expected from all the commands and flags you've been supporting so far. The only difference is that you have have an option to write the output to disk.
+Observa que es esperado el mismo comportamiento de todos los comandos y flags has estado usado hasta ahora. La única diferencia es que tienes la opción de escribir la salida a disco.
+
