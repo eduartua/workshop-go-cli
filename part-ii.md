@@ -1,23 +1,23 @@
-# Beginning Workshop: Command Line Apps Part II 
+# Workshop: Command Line Apps Parte II 
 
-# Spawning Processes
-In this section, we'll use the common `grep` search utility on your (UNIX-like) OS to do the searching for you when your program is called with the previously added `-f` flag.
+# Generado un Proceso
+En esta sercción, usaremos una de las utilidades de búsqueda más comunes en los sistemas operativos (UNIX-like) `grep` para hacer la búsqueda por ti cuando tu programa es llamado con el flag previamente agregado `-f`.
 
-Your task is to "shell out" the search string to the `grep` utility to do the search rather than rely on your own string-searching logic.
+Tu tarea es pasarle "via shell" el string de búsqueda a la utilidad `grep` en lugar de utilizar tu propia lógica de búsqueda basada en dicho string.
 
-Use https://gobyexample.com/spawning-processes as a guide for this exercise.
+Usa https://gobyexample.com/spawning-processes como guía para este ejercicio.
 
-# Exec'ing Processes
+# Ejecutando Procesos
 https://gobyexample.com/execing-processes
 
-# Handling Signals
+# Manejando Señales
 https://gobyexample.com/signals
 
-## Exit and Exit Codes
-When your program shuts down, users (sysadmins, etc) will expect it to behave like any other UNIX/Linux utility. Hence, you will want to exit cleanly and perform as expected when you application receives OS signals like SIGINT, SIGHUP and others.
+## Salir y Códigos de Salida
+Cuando tu programa se finaliza, los usuarios (sysadmins, etc) esperarán que se comporten como cualquier otra utilidad UNIX/Linux. Por lo tanto, desearás que el programa tenga salida de manera limpia y se ejecute como es esperado cunado tu aplicación recive una señal del Sistema Operativo, tal como SIGINT, SIGHUP entre otras.
 
 Example: https://gobyexample.com/exit
 
-Most Go applications can use `os.Exit(code int)` or something that implicitly calls on `os.Exit` like `log.Fatal`.
+La mayoría de las aplicaciones en Go pueden usar `os.Exit(code int)` o algo que implícitamente llame a `os.Exit` como en el caso de `log.Fatal`.
 
-ProTip: Avoid using `os.Exit` or code that calls on `os.Exit` during unit tests. The test run will simply exit and short-circuit.
+ProTip: Evita usar `os.Exit` o código que llame a `os.Exit` durante pruebas unitarias. Al correr la prueba el proceso simplemente tendrá salida.
