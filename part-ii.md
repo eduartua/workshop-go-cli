@@ -1,7 +1,7 @@
 # Workshop: Command Line Apps Parte II 
 
 # Generado un Proceso
-En esta sercción, usaremos una de las utilidades de búsqueda más comunes en los sistemas operativos (UNIX-like) `grep` para hacer la búsqueda por ti cuando tu programa es llamado con el flag previamente agregado `-f`.
+En esta sección, usaremos una de las utilidades de búsqueda más comunes en los sistemas operativos (UNIX-like) `grep` para hacer la búsqueda por ti cuando tu programa es llamado con el flag previamente agregado `-f`.
 
 Tu tarea es pasarle "via shell" el string de búsqueda a la utilidad `grep` en lugar de utilizar tu propia lógica de búsqueda basada en dicho string.
 
